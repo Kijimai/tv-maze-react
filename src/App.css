@@ -1,0 +1,73 @@
+html {
+  font-size: 10px;
+  box-sizing: border-box;
+}
+
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit;
+}
+
+body {
+  font-family: "Open Sans", sans-serif;
+  background-color: #222233;
+}
+
+.header,
+.searchField {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.header {
+  position: sticky;
+  height: 20vh;
+  width: 100%;
+  background-color: rgba(173, 216, 230, 0.4);
+  flex-direction: column;
+}
+.header .main-header {
+  font-family: "Lobster", sans-serif;
+  font-size: 4rem;
+  margin: 0.5rem 0;
+}
+
+.searchField {
+  width: 50vw;
+}
+.searchField .searchShow,
+.searchField .btn {
+  padding: 2rem 1rem;
+  font-size: 1.6rem;
+}
+.searchField .btn {
+  cursor: pointer;
+  font-weight: 600;
+}
+
+.shows-container {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-template-rows: auto;
+  justify-content: center;
+  gap: 2rem;
+}
+.shows-container .show-item {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.3);
+  color: #fff;
+  padding: 2rem 3rem;
+  margin: 0 2rem;
+}
+.shows-container .show-item .summary {
+  font-size: 1.4rem;
+}
+
+/*# sourceMappingURL=App.css.map */
