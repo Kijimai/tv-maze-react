@@ -3,14 +3,17 @@ import axios from "axios"
 const AppContext = React.createContext()
 
 const AppProvider = ({ children }) => {
+  const [isLoading, setIsLoading] = useState(false)
   const [shows, setShows] = useState([])
   const [showValue, setShowValue] = useState("")
+  const [error, setError] = useState({ show: false, msg: "" })
   const handleChange = (e) => {
     const value = e.target.value
     setShowValue(value)
   }
 
   useEffect(() => {
+    setIsLoading(true)
     axios
       .get("https://api.tvmaze.com/search/shows?q=zombies")
       .then((res) => {
@@ -19,6 +22,7 @@ const AppProvider = ({ children }) => {
         }
       })
       .catch((err) => console.log(err))
+      setIsLoading(false)
   }, [])
 
   const fetchShowsName = (show) => {

@@ -4,7 +4,7 @@ import { useGlobalContext } from "../context"
 const SearchField = () => {
   const { handleChange, handleSubmit, showValue } = useGlobalContext()
   return (
-    <>
+    <div className="header">
       <h1 className="main-header">Got a show in mind?</h1>
       <form className="searchField" onSubmit={handleSubmit}>
         <input
@@ -17,7 +17,7 @@ const SearchField = () => {
           Search for title
         </button>
       </form>
-    </>
+    </div>
   )
 }
 

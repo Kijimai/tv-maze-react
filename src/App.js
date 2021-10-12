@@ -6,8 +6,9 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom"
 import React, { useState, useEffect } from "react"
 import "./App.css"
-import Show from "./components/Show"
-import SearchField from "./components/SearchField"
+import Main from "./pages/Main"
+import ShowPage from "./pages/ShowPage"
+import Error from "./pages/Error"
 import { useGlobalContext } from "./context"
 
 function App() {
@@ -15,19 +16,19 @@ function App() {
 
   // shows.map((showItem) => console.log(showItem.show.id))
   return (
-    <div className="App">
-      <div className="header">
-        <SearchField />
-      </div>
-      <div className="shows-container">
-        {shows.map((showItem) =>
-          //Display show unless image isnt found
-          showItem.show.image ? (
-            <Show key={showItem.show.id} showItem={showItem} />
-          ) : null
-        )}
-      </div>
-    </div>
+    <Router>
+      <Switch>
+        <Route exact path="/">
+          <Main {...shows} />
+        </Route>
+        <Route path="/show/:id">
+          <ShowPage />
+        </Route>
+        <Route path="*">
+          <Error />
+        </Route>
+      </Switch>
+    </Router>
   )
 }
 

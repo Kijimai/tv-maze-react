@@ -16,6 +16,10 @@ body {
   background-color: #222233;
 }
 
+.section {
+  min-height: 100vh;
+}
+
 .header,
 .searchField {
   display: flex;
@@ -55,6 +59,7 @@ body {
   grid-template-rows: auto;
   justify-content: center;
   gap: 2rem;
+  margin: 2rem;
 }
 .shows-container .show-item {
   display: flex;
@@ -64,10 +69,59 @@ body {
   background-color: rgba(0, 0, 0, 0.3);
   color: #fff;
   padding: 2rem 3rem;
-  margin: 0 2rem;
 }
-.shows-container .show-item .summary {
+.shows-container .show-item .show-info {
+  padding: 2rem 1rem;
+}
+.shows-container .show-item .show-info > * {
+  margin: 0.5rem 0;
+}
+.shows-container .show-item .show-info .show-link {
+  text-decoration: none;
   font-size: 1.4rem;
+  color: #f8b12c;
+  transition: 0.3s ease color;
+}
+.shows-container .show-item .show-info .show-link:hover {
+  text-decoration: underline;
+  color: green;
+}
+.shows-container .show-item .show-info .summary {
+  font-size: 1.4rem;
+}
+
+@media screen and (min-width: 375px) and (max-width: 1000px) {
+  .shows-container {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+  }
+  .shows-container .show-item {
+    margin: 0;
+  }
+}
+@media screen and (min-width: 1000px) and (max-width: 1440px) {
+  .shows-container {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+.error-page {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 1.6rem;
+}
+.error-page h1 {
+  font-size: 4rem;
+}
+.error-page h1 span {
+  color: #f04444;
+}
+.error-page .btn {
+  color: #f09d44;
+  transition: 0.3s ease color;
+}
+.error-page .btn:hover {
+  color: #b527b5;
 }
 
 /*# sourceMappingURL=App.css.map */
